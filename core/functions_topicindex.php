@@ -324,6 +324,6 @@ class functions_topicindex
 			'TOPICINDEX_VERSION'			=> $this->config['topicindex_version'],
 		));
 
-		return $authors;
+		return;
 	}
 }
