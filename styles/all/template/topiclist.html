@@ -1,0 +1,75 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{L_OIINDEX_HEADER}</h2>
+
+<form action="{U_ACTION}" method="post">
+	<div class="panel bg3">
+		<div class="inner">
+			<fieldset>
+				<p>{L_SELECT_A_LIST}{L_COLON} <select id="listslc" name="list" onchange="this.form.submit();"><option value="0" selected="selected">-------</option>{S_LIST_OPTIONS}</select></p>
+			</fieldset>
+		</div>
+	</div>
+{S_FORM_TOKEN}
+</form>
+
+<!-- IF S_SHOWLIST -->
+<div class="panel bg1">
+	<div class="inner">
+		<p class="filtrino icenter">
+			<!-- BEGIN block_nofiltrino -->
+				<span><a href="{block_nofiltrino.U_TUTTI}" class="i_all">{L_ALL}</a></span>
+				<!-- IF block_nofiltrino.S_09 --><span><a href="{block_nofiltrino.U_09}" class="i_all">{L_09}</a></span><!-- ELSE --><span class="i_nourl">{L_09}</span><!-- ENDIF -->
+				<!-- IF block_nofiltrino.S_SYMB --><span><a href="{block_nofiltrino.U_SYMB}" class="i_all">{L_SYMB}</a></span><!-- ELSE --><span class="i_nourl">{L_SYMB}</span><!-- ENDIF -->
+			<!-- END block_nofiltrino -->
+			<!-- BEGIN block_filtrino -->
+				<!-- IF block_filtrino.S_ISWITH -->
+					<span><a href="{block_filtrino.U_FILTER}" class="i_abcdz">{block_filtrino.FILTRINO}</a></span>
+				<!-- ELSE -->
+					<span class="i_nourl">{block_filtrino.FILTRINO}</span>
+				<!-- ENDIF -->
+			<!-- END block_filtrino -->
+		</p>
+	</div>
+</div>
+<!-- IF .block_list -->
+<!-- BEGIN block_list -->
+<!-- IF block_list.S_ISWITH2 -->
+<fieldset>
+	<h3>{block_list.FILTRINO}</h3>
+	<div class="panel bg3">
+		<div class="inner">
+			<table class="table1">
+				<thead>
+					<tr>
+						<th class="tlisthead">{L_TOPIC_TITLE}</th>
+						<th class="tlisthead">{L_POSTER}</th>
+						<th class="tlisthead">{L_REPLIES}</th>
+						<!-- IF U_MCP --><th class="tlisthead"> </th><!-- ENDIF -->
+					</tr>
+				</thead>
+				<tbody>
+				<!-- BEGIN block_topic_index -->
+					<tr>
+						<td class="{block_topic_index.ITOPIC_CLASS}"><a href="{block_topic_index.ITOPIC_URL}"><strong>{block_topic_index.ITOPIC_TITLE}</strong></a></td>
+						<td class="{block_topic_index.ITOPIC_CLASS} itopic_poster">{block_topic_index.ITOPIC_POSTER}</td>
+						<td class="{block_topic_index.ITOPIC_CLASS} itopic_rep">{block_topic_index.ITOPIC_TOTREP}</td>
+						<!-- IF U_MCP --><td class="{block_topic_index.ITOPIC_CLASS} itopic_rep">[<a href="{block_topic_index.U_REMOVE_FROM}">{L_REMOVE_FROM_LIST}</a>]</td><!-- ENDIF -->
+					</tr>
+				<!-- END block_topic_index -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+</fieldset>
+<!-- ENDIF -->
+<!-- END block_list -->
+<!-- ELSE -->
+<fieldset>
+	<p class="ianytopuc">{L_ANY_TOPIC_IN_LIST}</p>
+</fieldset>
+<!-- ENDIF -->
+
+<!-- ENDIF -->
+
+<!-- INCLUDE overall_footer.html -->
