@@ -10,6 +10,9 @@
 	padding-right:4px; 
 }
 
+.content ul, .content ol {
+    margin: 0 ! important; 
+}
 .icenter { 
 	text-align:center; 
 }
@@ -39,6 +42,17 @@
 
 .tlisthead { 
 	color:#000000 !important; 
+}
+
+.topicindex {
+	font-size: 1.2em;
+	line-height: 2.2em;
+	padding: 4px 0;
+}
+
+.topicindexremove {
+	margin-top:5px;
+	font-size: 1.2em;
 }
 
 .filtrino { 

@@ -35,33 +35,41 @@
 <!-- IF .block_list -->
 <!-- BEGIN block_list -->
 <!-- IF block_list.S_ISWITH2 -->
-<fieldset>
-	<h3>{block_list.FILTRINO}</h3>
-	<div class="panel bg3">
-		<div class="inner">
-			<table class="table1">
-				<thead>
-					<tr>
-						<th class="tlisthead">{L_TOPIC_TITLE}</th>
-						<th class="tlisthead">{L_POSTER}</th>
-						<th class="tlisthead">{L_REPLIES}</th>
-						<!-- IF U_MCP --><th class="tlisthead"> </th><!-- ENDIF -->
-					</tr>
-				</thead>
-				<tbody>
-				<!-- BEGIN block_topic_index -->
-					<tr>
-						<td class="{block_topic_index.ITOPIC_CLASS}"><a href="{block_topic_index.ITOPIC_URL}"><strong>{block_topic_index.ITOPIC_TITLE}</strong></a></td>
-						<td class="{block_topic_index.ITOPIC_CLASS} itopic_poster">{block_topic_index.ITOPIC_POSTER}</td>
-						<td class="{block_topic_index.ITOPIC_CLASS} itopic_rep">{block_topic_index.ITOPIC_TOTREP}</td>
-						<!-- IF U_MCP --><td class="{block_topic_index.ITOPIC_CLASS} itopic_rep">[<a href="{block_topic_index.U_REMOVE_FROM}">{L_REMOVE_FROM_LIST}</a>]</td><!-- ENDIF -->
-					</tr>
-				<!-- END block_topic_index -->
-				</tbody>
-			</table>
-		</div>
+<h3>{block_list.FILTRINO}</h3>
+
+<div class="forabg">
+	<div class="inner">
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="row-item">
+					<dt>
+						<div class="list-inner">{L_TOPIC_TITLE}</div>
+					</dt>
+					<dd class="topics">{L_POSTER}</dd>
+					<dd class="posts">{L_REPLIES}</dd>
+					<!-- IF U_MCP --><dd class="lastpost"><span>{L_REMOVE_FROM_LIST}</span></dd><!-- ENDIF -->
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist forums">
+		<!-- BEGIN block_topic_index -->
+			<li class="row <!-- IF block_topic_index.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+				<dl>
+					<dt class="topicindex">
+						<div class="list-inner">
+							<a href="{block_topic_index.ITOPIC_URL}"><strong>{block_topic_index.ITOPIC_TITLE}</strong></a>
+						</div>
+					</dt>
+					<dd class="topics">{block_topic_index.ITOPIC_POSTER}</dd>
+					<dd class="posts">{block_topic_index.ITOPIC_TOTREP}</dd>
+					<!-- IF U_MCP --><dd class="lastpost"><span class="topicindexremove">[<a href="{block_topic_index.U_REMOVE_FROM}">{L_REMOVE_FROM_LIST}</a>]</span></dd><!-- ENDIF -->
+				</dl>
+			</li>
+		<!-- END block_topic_index -->
+		</ul>
 	</div>
-</fieldset>
+</div>
+
 <!-- ENDIF -->
 <!-- END block_list -->
 <!-- ELSE -->

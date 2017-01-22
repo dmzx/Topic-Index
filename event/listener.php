@@ -11,6 +11,7 @@ namespace dmzx\topicindex\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use phpbb\user;
+use phpbb\auth\auth;
 use phpbb\template\template;
 use phpbb\db\driver\driver_interface as db_interface;
 use phpbb\config\config;
@@ -25,6 +26,9 @@ class listener implements EventSubscriberInterface
 
 	/** @var user */
 	protected $user;
+
+	/** @var auth */
+	protected $auth;
 
 	/** @var template */
 	protected $template;
@@ -55,6 +59,7 @@ class listener implements EventSubscriberInterface
 	*
 	* @param string					$functions_topicindex
 	* @param user					$user
+	* @param auth					$auth
 	* @param emplate				$template
 	* @param db_interface			$db
 	* @param config					$config
@@ -67,6 +72,7 @@ class listener implements EventSubscriberInterface
 	public function __construct(
 		$functions_topicindex,
 		user $user,
+		auth $auth,
 		template $template,
 		db_interface $db,
 		config $config,
@@ -79,6 +85,7 @@ class listener implements EventSubscriberInterface
 	{
 		$this->functions_topicindex		= $functions_topicindex;
 		$this->user						= $user;
+		$this->auth 					= $auth;
 		$this->template					= $template;
 		$this->db						= $db;
 		$this->config					= $config;
@@ -93,6 +100,7 @@ class listener implements EventSubscriberInterface
 	{
 		return array(
 			'core.viewonline_overwrite_location'			=> 'add_page_viewonline',
+			'core.permissions'								=> 'permissions',
 			'core.user_setup'								=> 'load_language_on_setup',
 			'core.page_header'								=> 'page_header',
 			'core.acp_manage_forums_request_data'			=> 'acp_manage_forums_request_data',
@@ -111,6 +119,13 @@ class listener implements EventSubscriberInterface
 		}
 	}
 
+	public function permissions($event)
+	{
+		$permissions = $event['permissions'];
+		$permissions['u_topicindex_view'] = array('lang' => 'ACL_U_TOPICINDEX', 'cat' => 'misc');
+		$event['permissions'] = $permissions;
+	}
+
 	public function load_language_on_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
@@ -124,8 +139,9 @@ class listener implements EventSubscriberInterface
 	public function page_header($event)
 	{
 		$this->template->assign_vars(array(
-			'U_OTINDEX'		=> $this->helper->route('dmzx_topicindex_controller'),
-			'PHPBB_IS_32'	=> ($this->files_factory !== null) ? true : false,
+			'U_OTINDEX'				=> $this->helper->route('dmzx_topicindex_controller'),
+			'PHPBB_IS_32'			=> ($this->files_factory !== null) ? true : false,
+			'TOPICINDEXLIST_VIEW'	=> $this->auth->acl_get('u_topicindex_view'),
 		));
 	}
 

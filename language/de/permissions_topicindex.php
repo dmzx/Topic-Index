@@ -1,6 +1,7 @@
 <?php
 /**
 *
+* @version $Id: permissions_topicindex.php 51 2017-01-22 14:05:52Z Scanialady $
 * @package phpBB Extension - Topic Index
 * @copyright (c) 2015 dmzx - http://www.dmzx-web.net
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
@@ -33,15 +34,10 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 //
 // Some characters you may want to copy&paste:
-// ’ » “ ” …
+// ‚ ‘ ’ « » „ “ ” …
 //
 
 // Merge the following language entries into the lang array
 $lang = array_merge($lang, array(
-	'ACP_CAT_OINDEX'				=> 'Índice de temas oficiales',
-	'ACP_OINDEX_CFG'				=> 'Configuración',
-	//Log
-	'LOG_OINDEX_ADDLIST'			=> '<strong>Se agregó una nueva lista de temas.</strong><br />%s',
-	'LOG_OINDEX_DELETELIST'			=> '<strong>Lista de temas eliminados.</strong><br />%s',
-	'LOG_OINDEX_EDITCFG'			=> '<strong>Editar la configuración del Índice de Temas Oficiales.</strong><br />%s',
+	'ACL_U_TOPICINDEX'		=> 'Kann „Official Topic Index“-Themenliste sehen',
 ));

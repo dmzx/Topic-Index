@@ -16,6 +16,7 @@ use phpbb\db\driver\driver_interface as db_interface;
 use phpbb\request\request_interface;
 use phpbb\controller\helper;
 use phpbb\config\config;
+use phpbb\exception\http_exception;
 
 class main
 {
@@ -100,6 +101,11 @@ class main
 
 	public function handle_topicindex()
 	{
+		if (!$this->auth->acl_get('u_topicindex_view'))
+		{
+			throw new http_exception(403, 'NOT_AUTHORISED');
+		}
+
 		$list		= $this->request->variable('list', 0);
 		$iremove	= $this->request->variable('iremove', 0);
 		$ilimiter	= $this->request->variable('ilimit', '');

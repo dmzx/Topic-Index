@@ -6,6 +6,7 @@ services:
         arguments:
             - '@dmzx.topicindex.core.functions'
             - '@user'
+            - '@auth'
             - '@template'
             - '@dbal.conn'
             - '@config'

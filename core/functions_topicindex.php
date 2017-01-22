@@ -245,7 +245,7 @@ class functions_topicindex
 	*/
 	function add_to_ilist($the_forum, $whoadd = 0)
 	{
-		$whoaddfixed =	(int) $whoadd;
+		$whoaddfixed = (int) $whoadd;
 
 		if (!empty($whoaddfixed) && $this->auth->acl_getf_global('m_'))
 		{
