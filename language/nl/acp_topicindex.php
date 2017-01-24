@@ -39,16 +39,16 @@ if (empty($lang) || !is_array($lang))
 
 // Merge the following language entries into the lang array
 $lang = array_merge($lang, array(
-	'OFFICIAL_TOPIC_INDEX'			=> 'Beheer Offici&euml;le Topic Index Extensie',
+	'OFFICIAL_TOPIC_INDEX'			=> 'Beheer Officiële Topic Index Extensie',
 	'ADD_NEW_TOPICS_LIST'			=> 'Voeg nieuwe lijst toe',
 	'LIST_NAME'						=> 'Lijst naam',
-	'OINDEX_CFG_SETUP'				=> 'Configureer Offici&euml;le Topic Index',
+	'OINDEX_CFG_SETUP'				=> 'Configureer Officiële Topic Index',
 	'OVERFLOW_IN_TOPIC'				=> 'Sta scroll bar toe in de binnenste topic lijst',
 	'NAME_FORUM_LIST_EMPTY'			=> 'De lijst naam kan niet leeg zijn.',
 	'SELECT_FORUM_LIST_EMPTY'		=> 'Er moet op zijn minst een forum geselecteerd zijn.',
 	'OINDEX_ADDED_LIST'				=> 'Lijst succesvol opgeslagen.',
 	'OINDEX_DELETED_LIST'			=> 'Lijst succesvol verwijderd.',
-	'OINDEX_EDIT_CFG'				=> 'Configuratie van Offici&euml;le Topic Index succesvol bewerkt.',
+	'OINDEX_EDIT_CFG'				=> 'Configuratie van Officiële Topic Index succesvol bewerkt.',
 	'OINDEX_FORUMS'					=> 'Forums',
 	'OINDEX_SELECT_FORUM'			=> 'Selecteer een forum',
 	'OTINDEX_LIST_ALONE_DSC'		=> 'Maak een externe lijst van alle topics in een bepaald forum of meerdere forums samen. De externe lijst hoeft niet geactiveerd te zijn in het forum. Maar zal in dat geval alle topics opnemen.',

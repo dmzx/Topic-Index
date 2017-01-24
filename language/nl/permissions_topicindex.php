@@ -39,5 +39,5 @@ if (empty($lang) || !is_array($lang))
 
 // Merge the following language entries into the lang array
 $lang = array_merge($lang, array(
-	'ACL_U_TOPICINDEX'		=> 'Kan de Offici&euml;le Topic Index - Topics lijst bekijken',
+	'ACL_U_TOPICINDEX'		=> 'Kan de Officiële Topic Index - Topics lijst bekijken',
 ));

@@ -54,5 +54,5 @@ $lang = array_merge($lang, array(
 	'SYMB'							=> '#&%',
 	'ANY_TOPIC_IN_LIST'				=> 'Alle topics',
 	'SELECT_A_LIST'					=> 'Selecteer een lijst',
-	'OIINDEX_HEADER'				=> 'Offici&euml;le Topic Index - Topics Lijst',
+	'OIINDEX_HEADER'				=> 'Officiële Topic Index - Topics Lijst',
 ));

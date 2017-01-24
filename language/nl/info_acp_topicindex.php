@@ -39,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 
 // Merge the following language entries into the lang array
 $lang = array_merge($lang, array(
-	'ACP_CAT_OINDEX'				=> 'Offici&euml;le Topic Index',
+	'ACP_CAT_OINDEX'				=> 'Officiële Topic Index',
 	'ACP_OINDEX_CFG'				=> 'Configuratie',
 	//Log
 	'LOG_OINDEX_ADDLIST'			=> '<strong>Nieuwe topic lijst toegevoegd.</strong><br />%s',
