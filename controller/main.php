@@ -187,7 +187,7 @@ class main
 			$this->db->sql_freeresult($result1);
 
 			$forumsari	= array();
-			$forumsari 	= unserialize($row1['list_forum']);
+			$forumsari 	= json_decode($row1['list_forum']);
 			$filtrini	= range('a', 'z');
 			$fixa		= array();
 			$indexlist	= array();

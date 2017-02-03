@@ -119,7 +119,7 @@ class admin_controller
 		$i = 0;
 		while ($row = $this->db->sql_fetchrow($result))
 		{
-			$forumari = unserialize($row['list_forum']);
+			$forumari = json_decode($row['list_forum']);
 
 			$this->template->assign_block_vars('list', array(
 				'LIST_NAME'		=> $row['list_name'],
@@ -156,7 +156,7 @@ class admin_controller
 			{
 				$sql_array	= array(
 					'list_name'		=> $listname,
-					'list_forum'	=> serialize($forumlist),
+					'list_forum'	=> json_encode($forumlist),
 				);
 				$sql = "INSERT INTO " . $this->forum_lists_table . " " . $this->db->sql_build_array('INSERT', $sql_array);
 				$this->db->sql_query($sql);
