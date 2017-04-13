@@ -13,11 +13,14 @@
 .content ul, .content ol {
     margin: 0 ! important; 
 }
+
 .icenter { 
 	text-align:center; 
 }
+
 .itopic_num { 
-	text-align:center; width:30px; 
+	text-align:center; 
+	width:30px; 
 }
 
 .itopic_titles { 
@@ -66,13 +69,13 @@
 .i_abcdz { 
 	margin: 0 0 0 2px; 
 	padding: 0 4px 0 4px; 
-	background:#CADCEB; 
+	background: #CADCEB; 
 }
 
 .i_abcdz:hover { 
 	margin: 0 0 0 2px; 
 	padding: 0 4px 0 4px; 
-	background:#9badb9; 
+	background: #9badb9; 
 	text-decoration:none ! important; 
 }
 
@@ -87,13 +90,13 @@
 .i_all { 
 	margin: 0 0 0 2px; 
 	padding: 0 4px 0 4px; 
-	background:#CADCEB; 
+	background: #CADCEB;  
 }
 
 .i_all:hover { 
 	margin: 0 0 0 2px; 
 	padding: 0 4px 0 4px; 
-	background:#9badb9; 
+	background: #9badb9; 
 	text-decoration:none ! important; 
 }
 
@@ -104,4 +107,28 @@
 
 .icon-topiclist	{ 
 	background-image: url("./images/icon_topiclist.gif"); 
+}
+
+@media (max-width: 850px) {
+	li.header dt {
+		text-align: center;
+		text-transform: none;
+		line-height: 1em;
+		font-size: 1.2em;
+		padding-bottom: 4px;
+	}
+
+	ul.topiclist li.header dt, ul.topiclist li.header dt .list-inner {
+		margin-right: 0 !important;
+		padding-right: 0;
+	}
+
+	ul.topiclist dt, ul.topiclist dt .list-inner
+	{
+		margin-right: 0;
+	}
+
+	ul.topiclist dd {
+		display: none;
+	}
 }

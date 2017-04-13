@@ -10,6 +10,7 @@
 namespace dmzx\topicindex\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use dmzx\topicindex\core\functions_topicindex;
 use phpbb\user;
 use phpbb\auth\auth;
 use phpbb\template\template;
@@ -57,10 +58,10 @@ class listener implements EventSubscriberInterface
 	/**
 	* Constructor
 	*
-	* @param string					$functions_topicindex
+	* @param functions_topicindex	$functions_topicindex
 	* @param user					$user
 	* @param auth					$auth
-	* @param emplate				$template
+	* @param template				$template
 	* @param db_interface			$db
 	* @param config					$config
 	* @param helper					$helper
@@ -70,7 +71,7 @@ class listener implements EventSubscriberInterface
 	* @param factory				$files_factory
 	*/
 	public function __construct(
-		$functions_topicindex,
+		functions_topicindex $functions_topicindex,
 		user $user,
 		auth $auth,
 		template $template,
@@ -184,7 +185,7 @@ class listener implements EventSubscriberInterface
 
 		if ($forum_id)
 		{
-			$sql	= "SELECT topic_id, forum_id, topic_posts_approved, topic_title, topic_type
+			$sql = "SELECT topic_id, forum_id, topic_posts_approved, topic_title, topic_type
 				FROM " . TOPICS_TABLE . "
 				WHERE forum_id = " . (int) $forum_id . "
 				AND topic_posts_approved >= 1

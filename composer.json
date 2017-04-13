@@ -3,9 +3,13 @@
 	"type": "phpbb-extension",
 	"description": "Create a ordered list of topics in a post and in external page.",
 	"homepage": "http://www.dmzx-web.net",
-	"version": "1.0.3",
-	"time": "2017-01-22",
-	"keywords": ["phpbb", "extension", "topicindex"],
+	"version": "1.0.4",
+	"time": "2017-04-13",
+	"keywords": [
+		"phpbb",
+		"extension",
+		"topicindex"
+	],
 	"license": "GPL-2.0",
 	"authors": [
 		{

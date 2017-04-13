@@ -86,7 +86,6 @@ class admin_controller
 	{
 		$this->user->add_lang_ext('dmzx/topicindex', 'acp_topicindex');
 
-		$forumari	= array();
 		$error		= array();
 		$submit		= $this->request->is_set_post('submit');
 		$setcfg		= $this->request->is_set_post('setcfg');

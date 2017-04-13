@@ -9,6 +9,7 @@
 
 namespace dmzx\topicindex\controller;
 
+use dmzx\topicindex\core\functions_topicindex;
 use phpbb\template\template;
 use phpbb\user;
 use phpbb\auth\auth;
@@ -60,7 +61,7 @@ class main
 	/**
 	* Constructor
 	*
-	* @param string					$functions_topicindex
+	* @param functions_topicindex	$functions_topicindex
 	* @param template		 		$template
 	* @param user					$user
 	* @param auth					$auth
@@ -73,7 +74,7 @@ class main
 	* @param string 				$forum_lists_table
 	*/
 	public function __construct(
-		$functions_topicindex,
+		functions_topicindex $functions_topicindex,
 		template $template,
 		user $user,
 		auth $auth,
@@ -109,7 +110,6 @@ class main
 		$list		= $this->request->variable('list', 0);
 		$iremove	= $this->request->variable('iremove', 0);
 		$ilimiter	= $this->request->variable('ilimit', '');
-		$list		= (int) $list;
 		$zurl		= $this->helper->route('dmzx_topicindex_controller', array('list' => $list));
 
 		// Action add / remove topics
@@ -186,10 +186,8 @@ class main
 			$row1		= $this->db->sql_fetchrow($result1);
 			$this->db->sql_freeresult($result1);
 
-			$forumsari	= array();
 			$forumsari 	= json_decode($row1['list_forum']);
 			$filtrini	= range('a', 'z');
-			$fixa		= array();
 			$indexlist	= array();
 
 			foreach ($forumsari as $forum_id)

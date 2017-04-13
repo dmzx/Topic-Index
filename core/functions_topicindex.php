@@ -144,7 +144,7 @@ class functions_topicindex
 
 			if (preg_match('#^[a-z]#u', $keytag))
 			{
-				$keytag	= $keytag;
+
 			}
 			else if (preg_match('#^[0-9]#u', $keytag))
 			{
