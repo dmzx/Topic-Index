@@ -144,7 +144,7 @@ class functions_topicindex
 
 			if (preg_match('#^[a-z]#u', $keytag))
 			{
-
+				$keytag;
 			}
 			else if (preg_match('#^[0-9]#u', $keytag))
 			{
@@ -168,7 +168,7 @@ class functions_topicindex
 				$topiclist[] 		= $array;
 			}
 		}
-		$this->db->sql_freeresult();
+		$this->db->sql_freeresult($result);
 
 		/* order array */
 		if (count($topiclist) > 0)
@@ -293,7 +293,7 @@ class functions_topicindex
 		$sql2 = 'SELECT forum_id, post_index, default_inindex, tag_filter
 			FROM ' . FORUMS_TABLE . '
 			WHERE forum_id = ' . (int) $forum_id;
-		$result2	= $this->db->sql_query($sql2);
+		$result2 = $this->db->sql_query($sql2);
 		$forum_data	= $this->db->sql_fetchrow($result2);
 		$this->db->sql_freeresult($result2);
 

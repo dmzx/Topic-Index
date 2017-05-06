@@ -105,10 +105,6 @@
 	font-size:14px; 
 }
 
-.icon-topiclist	{ 
-	background-image: url("./images/icon_topiclist.gif"); 
-}
-
 @media (max-width: 850px) {
 	li.header dt {
 		text-align: center;

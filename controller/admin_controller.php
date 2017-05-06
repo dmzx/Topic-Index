@@ -86,6 +86,8 @@ class admin_controller
 	{
 		$this->user->add_lang_ext('dmzx/topicindex', 'acp_topicindex');
 
+		add_form_key('acp_topicindex');
+
 		$error		= array();
 		$submit		= $this->request->is_set_post('submit');
 		$setcfg		= $this->request->is_set_post('setcfg');
@@ -136,6 +138,11 @@ class admin_controller
 
 		if ($submit)
 		{
+			if (!check_form_key('acp_topicindex'))
+			{
+				trigger_error($this->user->lang['FORM_INVALID'] . adm_back_link($this->u_action), E_USER_WARNING);
+			}
+
 			unset ($error);
 			$error		= array();
 			$listname	= $this->request->variable('list_name', '', true);
