@@ -1,4 +1,9 @@
-## Changelog
+## Topic IndexChangelog
+
+### 1.0.5 - 2020-01-15
+- Drop support for 3.1.
+- Twig update.
+- Code update tables.yml
 
 ### 1.0.4 - 2017-04-13
 
